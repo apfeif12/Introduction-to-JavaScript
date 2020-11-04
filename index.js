@@ -14,9 +14,16 @@ Task 1a - Voting Age
 Do the following:   
    1. Make a variable called votingAge and give it a value
    2. Return true if age is 18 or higher
-
    HINT: no function required
 */
+
+let votingAge = 14
+let isOlder = false
+if(votingAge > 18) {
+isOlder= true
+}
+console.log(isOlder)
+
 
 
 
@@ -30,6 +37,11 @@ Do the following:
 
    HINT: no function required
 */
+var x = 10
+var y = 5
+if(x > y){
+  x + y
+}
 
 
 
@@ -45,7 +57,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+var x = "1999"
+Number(x)
 
 
 
@@ -58,8 +71,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
 
 
@@ -74,8 +87,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7
 }
 
 
@@ -94,24 +107,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   Feeding Requirements:
 
   Adult Dogs 1 year and older 
-     up to 5 lbs - 5% of their body weight
-     6 - 10 lbs - 4% of their body weight 
-     11 - 15 lbs - 3% of their body weight 
-     > 15lbs - 2% of their body weight 
+     up to 5 lbs - 5% of their body weight      1
+     6 - 10 lbs - 4% of their body weight       2
+     11 - 15 lbs - 3% of their body weight      3
+     > 15lbs - 2% of their body weight          4
 
   Puppies less than 1 year
-     2 - 4 months 10% of their body weight
-     4 - 7 months 5% of their body weight 
-     7 - 12 months 4% of their body weight
+     2 - 4 months 10% of their body weight        5
+     4 - 7 months 5% of their body weight         1
+     7 - 12 months 4% of their body weight        2
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
-
-
+function hungryDog(weight, age){
+  if(age >= 1 && weight <= 5){
+  return weight * .05
+} if(age >= 1 && weight >= 6 && weight <= 10){
+  return weight * .04
+} if(age >= 1 && weight >= 11 && weight <= 15){
+  return weight * .03
+} if(age >= 1 && weight >= 15){
+  return weight * .04
+} if(age <=.99 && age >.583){
+  return weight * .04
+} if(age <=.582 && age >= .333){
+  return weight * .05
+} if(age <=.332 && age >= .166){
+  return weight * .1
+}
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -131,11 +156,31 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-
+let computer=Math.random();
+let user=Math.random();
 function game(user, computer){
-    /*add your code here*/
+  if(computer <= 1 && computer >= .6667){
+    computer = 'scissors'
+  }if(computer <= 6666 && computer >= .3334){
+    computer = 'paper'
+  }if(computer <= .3333 && computer >= 0){
+    computer = 'rock'
+  }if(user <= 1 && user >= .6667){
+    user = 'scissors'
+  }if(user <= 6666 && user >= .3334){
+    user = 'paper'
+  }if(user <= .3333 && user >= 0){
+    user = 'rock'
+  }if(user === 'scissors' && computer === 'paper' || user === 'paper' && computer === 'rock' || user === 'rock' && computer === 'scissors'){
+    return "you win!"
+  }else if(user === 'scissors' && computer === 'scissors' || user === 'paper' && computer === 'paper' || user === 'rock' && computer === 'rock'){
+    return "it's a tie"
+  }else if(user === 'paper' && computer === 'scissors' || user === 'rock' && computer === 'paper' || user === 'scissors' && computer === 'rock'){
+    return "you lose!"
+  }
 }
-  
+console.log(game(user, computer));
+
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -149,8 +194,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    return kilometers * .621371
   }
 
 
@@ -163,9 +208,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(centimeters){
+    return centimeters / 30.48
+}
  
 
 
@@ -198,11 +243,20 @@ Using the grade function below do the following:
    60-69 =  D 
    below 60 = F
 */
-  
-function grade(/*add your code here*/){
-    /*add your code here*/
+let score=Math.floor(Math.random() * 101)  
+function grade(score){
+  if(score > 90){
+    return "you got an A"
+  }if(score <=89 && score >= 80){
+    return "you got a B"
+  }if(score <=79 && score >= 70){
+    return "you got a C"
+  }if(score <=69 && score >= 60){
+    return "you got a D"
+  }if(score <=59){    
+    return "you got a F"
   }
-  
+}
   
   
   
